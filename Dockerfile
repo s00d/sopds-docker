@@ -3,7 +3,7 @@ FROM python:3.6-jessie
 LABEL   author="Dmitry Shelepnev admin@sopds.ru" \
         devops="Evgeny Stoyanov quick.es@gmail.com" \
         name="SOPDS books catalog" \
-        url="https://github.com/mitshel/sopds" \
+        url="https://github.com/s00d/sopds" \
         version="master" 
 
 ENV SOPDS_DIR="/opt/sopds-master" \
