@@ -29,6 +29,6 @@ OPDS каталог для мобильных устройств.
 
 Если вам требуется собрать контейнер самостоятельно, то
 
-    docker build -t quickes/sopds-docker:latest .
+    docker build -t s00d/sopds-docker:latest .
 
 (точка в конце команды обязательна!)

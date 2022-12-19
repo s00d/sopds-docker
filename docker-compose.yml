@@ -38,7 +38,7 @@ services:
       - "../books:/books"
   scanner:
     restart: always
-    image: quickes/sopds-docker:latest
+    image: s00d/sopds-docker:latest
     environment:
       - POSTGRES_DB=sopds
       - POSTGRES_USER=sopds
