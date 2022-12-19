@@ -1,4 +1,4 @@
-FROM python:3.6
+FROM python:3.7
 
 LABEL   author="Dmitry Shelepnev admin@sopds.ru" \
         devops="Evgeny Stoyanov quick.es@gmail.com" \
@@ -18,7 +18,8 @@ RUN chmod +x ${SOPDS_DIR}/entrypoint.sh \
     && apt update \
     && apt install -y mariadb-client unzip \
     && wget -nv https://github.com/s00d/sopds-docker/blob/master/sopds-pv-current.zip?raw=true \
-    && unzip sopds-pv-current.zip -d /opt \
+    && unzip sopds-pv-current.zip -d ./opt \
+    && ls \
     && pip3 install mysqlclient psycopg2-binary \
     && pip3 install -r ${SOPDS_DIR}/requirements.txt
 
