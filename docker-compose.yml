@@ -2,7 +2,7 @@ version: "2"
 services:
   pg:
     restart: always
-    image: postgres:10.3
+    image: postgres:15.1
     environment:
       - DEBUG=false
       - PG_TRUST_LOCALNET=true
@@ -35,7 +35,7 @@ services:
     ports:
       - 8001:8001
     volumes:
-      - "../books:/books"
+      - /srv/dev-sataa24/UsersFolders/books:/books
   scanner:
     restart: always
     image: s00d/sopds-docker:latest
@@ -50,7 +50,7 @@ services:
       - pg
       - server
     volumes:
-      - "../books:/books"
+      - /srv/dev-sataa24/UsersFolders/books:/books
     command: scanner
 volumes:
   pg-data:

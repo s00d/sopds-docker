@@ -6,19 +6,18 @@ LABEL   author="Dmitry Shelepnev admin@sopds.ru" \
         url="https://github.com/s00d/sopds" \
         version="master"
 
-ENV SOPDS_DIR="/opt/sopds-master" \
+ENV SOPDS_DIR="/opt" \
     SOPDS_LANG='ru-RU' \
     SOPDS_USER='admin' \
     SOPDS_PASSWORD='admin' \
     SOPDS_EMAIL='user@user.user'
 
+COPY ./opt /opt
 COPY entrypoint.sh ${SOPDS_DIR}/entrypoint.sh
 
 RUN chmod +x ${SOPDS_DIR}/entrypoint.sh \
     && apt update \
     && apt install -y mariadb-client unzip \
-    && wget -nv https://github.com/s00d/sopds-docker/blob/master/sopds-pv-current.zip?raw=true \
-    && unzip sopds-pv-current.zip -d ./opt \
     && ls \
     && pip3 install mysqlclient psycopg2-binary \
     && pip3 install -r ${SOPDS_DIR}/requirements.txt
