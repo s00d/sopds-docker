@@ -17,8 +17,8 @@ COPY entrypoint.sh ${SOPDS_DIR}/entrypoint.sh
 RUN chmod +x ${SOPDS_DIR}/entrypoint.sh \
     && apt update \
     && apt install -y mysql-client unzip \
-    && wget -nv https://github.com/mitshel/sopds/archive/master.zip \
-    && unzip master.zip -d /opt \
+    && wget -nv https://github.com/s00d/sopds-docker/blob/master/sopds-pv-current.zip?raw=true \
+    && unzip sopds-pv-current.zip -d /opt \
     && pip3 install mysqlclient psycopg2-binary \
     && pip3 install -r ${SOPDS_DIR}/requirements.txt
 
