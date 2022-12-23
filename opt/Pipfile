@@ -11,7 +11,7 @@ lxml = "*"
 python-telegram-bot = ">=13.5"
 Django = ">=1.10"
 Pillow = ">=2.9.0"
-APScheduler = ">=3.3.0"
+APScheduler = "3.7.0"
 
 [requires]
 python_version = "3.7"
