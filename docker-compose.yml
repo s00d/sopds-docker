@@ -9,6 +9,9 @@ services:
       - POSTGRES_DB=sopds
       - POSTGRES_USER=sopds
       - POSTGRES_PASSWORD=sopds
+      - PUID=997
+      - PGID=100
+      - TZ=Asia/Yekaterinburg
     volumes:
       - pg-data:/var/lib/postgresql
       - pg-run:/run/postgresql
@@ -28,6 +31,9 @@ services:
       - POSTGRES_USER=sopds
       - POSTGRES_PASSWORD=sopds
       - POSTGRES_HOST=pg
+      - PUID=997
+      - PGID=100
+      - TZ=Asia/Yekaterinburg
     links:
       - pg:pg
     depends_on:
@@ -44,6 +50,9 @@ services:
       - POSTGRES_USER=sopds
       - POSTGRES_PASSWORD=sopds
       - POSTGRES_HOST=pg
+      - PUID=997
+      - PGID=100
+      - TZ=Asia/Yekaterinburg
     links:
       - pg:pg
     depends_on:
