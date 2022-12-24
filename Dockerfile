@@ -19,7 +19,7 @@ RUN chmod +x ${SOPDS_DIR}/entrypoint.sh \
     && apt update \
     && apt install -y unzip \
     && apt install -y postgresql postgresql-client postgresql-contrib libpq-dev \
-    && pip3 install psycopg2 psycopg2-binary \
+    && pip3 install psycopg2-binary==2.8.6 \
     && pip3 install -r ${SOPDS_DIR}/requirements.txt
 
 #COPY settings.py ${SOPDS_DIR}/sopds/settings.py
