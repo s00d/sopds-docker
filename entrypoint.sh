@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e 
+set -e
 
 if [ ! -d /opds ]; then
     mkdir /opds
@@ -25,7 +25,7 @@ os.environ['DJANGO_SETTINGS_MODULE'] = 'sopds.settings'
 import django
 django.setup()
 from django.contrib.auth.management.commands.createsuperuser import get_user_model
-if get_user_model().objects.filter(username='${SOPDS_USER}'): 
+if get_user_model().objects.filter(username='${SOPDS_USER}'):
     print('Super user already exists. SKIPPING...')
 else:
     print('Creating super user...')
@@ -50,7 +50,7 @@ server)
     python3 manage.py sopds_server start
     ;;
 scanner)
-    python3 manage.py sopds_scanner start
+    python3 manage.py sopds_scanner start --verbose
     ;;
 log)
     tail -f \

@@ -9,6 +9,7 @@ services:
       - POSTGRES_DB=sopds
       - POSTGRES_USER=sopds
       - POSTGRES_PASSWORD=sopds
+      - POSTGRES_HOST_AUTH_METHOD=md5
       - PUID=997
       - PGID=100
       - TZ=Asia/Yekaterinburg

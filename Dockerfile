@@ -17,9 +17,9 @@ COPY entrypoint.sh ${SOPDS_DIR}/entrypoint.sh
 
 RUN chmod +x ${SOPDS_DIR}/entrypoint.sh \
     && apt update \
-    && apt install -y mariadb-client unzip \
-    && ls \
-    && pip3 install mysqlclient psycopg2-binary \
+    && apt install -y unzip \
+    && apt install -y postgresql postgresql-client postgresql-contrib libpq-dev \
+    && pip3 install psycopg2 psycopg2-binary \
     && pip3 install -r ${SOPDS_DIR}/requirements.txt
 
 #COPY settings.py ${SOPDS_DIR}/sopds/settings.py
